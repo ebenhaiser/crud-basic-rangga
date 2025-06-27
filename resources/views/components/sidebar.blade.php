@@ -60,7 +60,7 @@
         <li class="menu-item active">
             <a href="{{ route('index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Books</div>
+                <div data-i18n="Analytics">Menus</div>
             </a>
         </li>
 
