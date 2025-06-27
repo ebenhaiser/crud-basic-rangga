@@ -10,11 +10,25 @@
                         <th>#</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Category</th>
                         <th>Price</th>
                         <th>Available</th>
                         <th>Action</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($menus as $key => $menu)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $menu->name }}</td>
+                            <td>{{ $menu->description }}</td>
+                            <td>{{ $menu->category->name }}</td>
+                            <td>{{ $menu->price }}</td>
+                            <td>{{ $menu->is_available == 0 ? 'Not Available' : 'Available' }}</td>
+                            <td></td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>
