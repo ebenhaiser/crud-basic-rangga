@@ -4,7 +4,10 @@
             <h1>Menus</h1>
         </div>
         <div class="card-body">
-            <table class="table table-striped table-bordered">
+            <div align="right">
+                <a href="{{ route('add.menu') }}" class="btn btn-primary">Tambah</a>
+            </div>
+            <table class="mt-3 table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
