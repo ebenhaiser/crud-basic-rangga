@@ -29,8 +29,16 @@ class AdminController extends Controller
         // return view('addMenu');
     }
 
-    // public function index2()
-    // {
-    //     return view('index2');
-    // }
+    public function createMenu(Request $request)
+    {
+        $newMenu = new Menu();
+        $newMenu->name = $request->name;
+        $newMenu->price = $request->price;
+        $newMenu->is_available = $request->is_available;
+        $newMenu->category_id = $request->category_id;
+        $newMenu->description = $request->description;
+        $newMenu->save();
+
+        return redirect()->route('index');
+    }
 }

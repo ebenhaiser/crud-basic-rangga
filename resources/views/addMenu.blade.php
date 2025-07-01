@@ -4,7 +4,8 @@
             <h1>Add Menu</h1>
         </div>
         <div class="card-body">
-            <form action="">
+            <form action="{{ route('create.menu') }}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label for="" class="form-label">Name</label>
