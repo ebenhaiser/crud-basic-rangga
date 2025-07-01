@@ -29,6 +29,7 @@
                             <td>{{ $menu->price }}</td>
                             <td>{{ $menu->is_available == 0 ? 'Not Available' : 'Available' }}</td>
                             <td>
+                                <a href="{{ route('edit.menu', $menu->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                 <a href="{{ route('delete.menu', $menu->id) }}"
                                     onclick="return confirm('Are you sure you want to delete this menu?')"
                                     class="btn btn-sm btn-danger">Hapus</a>

@@ -41,4 +41,11 @@ class AdminController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function editMenu($id)
+    {
+        $menu = Menu::find($id);
+        $categories = Category::get();
+        return view('addMenu', compact('categories', 'menu'));
+    }
 }
