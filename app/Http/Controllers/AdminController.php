@@ -48,4 +48,17 @@ class AdminController extends Controller
         $categories = Category::get();
         return view('addMenu', compact('categories', 'menu'));
     }
+
+    public function updateMenu(Request $request, $id)
+    {
+        $updateMenu = Menu::find($id);
+        $updateMenu->name = $request->name;
+        $updateMenu->price = $request->price;
+        $updateMenu->is_available = $request->is_available;
+        $updateMenu->category_id = $request->category_id;
+        $updateMenu->description = $request->description;
+        $updateMenu->save();
+
+        return redirect()->route('index');
+    }
 }

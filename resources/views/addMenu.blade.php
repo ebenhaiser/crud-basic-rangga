@@ -8,7 +8,8 @@
             @endif
         </div>
         <div class="card-body">
-            <form action="{{ route('create.menu') }}" method="post">
+            <form action="{{ request()->routeIs('edit.menu') ? route('update.menu', $menu->id) : route('create.menu') }}"
+                method="post">
                 @csrf
                 <div class="row">
                     <div class="col-sm-6 mb-3">
@@ -52,7 +53,11 @@
                     </div>
                 </div>
                 <div align="right">
-                    <button class="btn btn-primary">Add</button>
+                    @if (request()->routeIs('edit.menu'))
+                        <button class="btn btn-primary">Edit</button>
+                    @else
+                        <button class="btn btn-primary">Add</button>
+                    @endif
                 </div>
             </form>
         </div>
